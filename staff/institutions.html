@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Institutions · Anumati Setu</title>
+  <meta name="description" content="Institutions with their open applications, overdue undertakings and compliance score">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    #filters .field:first-child { min-width: 310px; }
+    .why-list { margin: 6px 0 0; padding-left: 16px; font-size: .78rem; color: var(--as-text-2); max-width: 280px; }
+  </style>
+</head>
+<body data-page="institutions">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="card section">
+        <div class="card-body"><div id="filters" class="filters"></div><p class="muted small mb-0 mt-2" id="hint"></p></div>
+      </div>
+      <div class="card">
+        <div id="list"></div>
+        <div id="pager"></div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="institutions.js"></script>
+</body>
+</html>

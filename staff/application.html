@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case workspace · Anumati Setu</title>
+  <meta name="description" content="Case workspace for an AICTE approval application: route, pre-check, deficiencies, expert visit, committee, decision, documents, letters and timeline">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .case-head { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; }
+    .case-head h2 { margin: 0 0 4px; font-size: 1.15rem; }
+    .case-badges { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 8px; }
+    .case-toolbar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .case-pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; }
+    .case-item { border: 1px solid var(--as-border); border-radius: var(--as-radius-sm); padding: 12px 14px; background: var(--as-surface); }
+    .case-item + .case-item { margin-top: 10px; }
+    .case-item h3 { margin: 0; font-size: .98rem; }
+    .case-sub { font-size: .82rem; color: var(--as-muted); }
+    .case-who { display: flex; gap: 12px; align-items: center; }
+    .case-tabpane { padding: 16px; }
+    .case-section + .case-section { margin-top: 18px; }
+    .case-section > h3 { font-size: .95rem; margin: 0 0 8px; }
+    .case-codes { display: flex; flex-wrap: wrap; gap: 6px; }
+    .case-note { border-left: 3px solid var(--as-primary-100); padding: 6px 0 6px 12px; }
+    .case-note + .case-note { margin-top: 12px; }
+    .case-file a { overflow-wrap: anywhere; }
+    @media (max-width: 560px) { .case-toolbar { justify-content: flex-start; } .case-toolbar .btn { flex: 1 1 auto; } .case-tabpane { padding: 12px; } }
+  </style>
+</head>
+<body data-page="staff-application">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container stack lg">
+      <div id="case-state"></div>
+      <section class="card" id="case-head-card" hidden aria-labelledby="case-inst"><div class="card-body" id="case-head"></div></section>
+      <div id="case-why"></div>
+      <section class="card" id="case-route-card" hidden aria-labelledby="route-h">
+        <div class="card-head"><h2 id="route-h" class="mb-0" data-i18n="case.route">Route and progress</h2><span class="badge b-slate" id="route-badge"></span></div>
+        <div class="card-body" id="case-route"></div>
+      </section>
+      <div class="as-split" id="case-split" hidden>
+        <section class="card" id="case-main" aria-label="Case details"></section>
+        <aside class="stack" id="case-side" aria-label="Summary"></aside>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="application.js"></script>
+</body>
+</html>

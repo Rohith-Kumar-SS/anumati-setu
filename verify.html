@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify a letter · Anumati Setu</title>
+  <meta name="description" content="Check that a letter issued by Anumati Setu is genuine: paste its signed code or scan its QR code. No sign-in needed.">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <script src="assets/js/config.js"></script>
+  <style>
+    .verify-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 20px; align-items: start; }
+    .code-input { font-family: var(--as-mono); font-size: .82rem; min-height: 130px; word-break: break-all; }
+    .scan-box { position: relative; background: #0f1e33; border-radius: var(--as-radius); overflow: hidden; max-width: 460px; }
+    .scan-box video { display: block; width: 100%; max-height: 340px; object-fit: cover; }
+    .scan-box .frame { position: absolute; inset: 18% 18%; border: 3px solid rgba(255, 255, 255, .85); border-radius: 12px; pointer-events: none; }
+    .what-list li { display: flex; gap: 10px; padding: 6px 0; align-items: flex-start; }
+    .what-list .icon { color: var(--as-success); flex: none; margin-top: 3px; }
+    .vr-title { font-size: 1.3rem; font-weight: 800; margin: 0; }
+    @media (max-width: 900px) { .verify-grid { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body data-page="verify">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="verify-grid">
+        <div class="stack lg">
+          <div class="card accent-top">
+            <div class="card-head"><h2 id="in-h"></h2></div>
+            <div class="card-body">
+              <form id="verify-form" novalidate>
+                <div class="field">
+                  <label for="code" id="lbl-code"></label>
+                  <textarea class="textarea code-input" id="code" name="code" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+                  <div class="hint" id="code-hint"></div>
+                  <div class="error" id="code-error" hidden></div>
+                </div>
+                <div class="row mt-2">
+                  <button class="btn" id="btn-verify" type="submit"></button>
+                  <button class="btn secondary" id="btn-clear" type="button"></button>
+                </div>
+              </form>
+              <hr style="border:0;border-top:1px solid var(--as-border);margin:16px 0">
+              <div class="row">
+                <button class="btn secondary sm" id="btn-genuine" type="button"></button>
+                <button class="btn secondary sm" id="btn-tampered" type="button"></button>
+                <button class="btn secondary sm" id="btn-camera" type="button"></button>
+                <button class="btn secondary sm" id="btn-img" type="button"></button>
+                <input type="file" id="img-file" accept="image/*" hidden tabindex="-1" aria-label="QR image">
+              </div>
+              <div id="scan-panel" class="mt-2" hidden>
+                <div class="scan-box"><video id="cam" playsinline muted></video><div class="frame"></div></div>
+                <div class="row mt-1"><span class="muted small" id="scan-hint"></span><button class="btn sm secondary" id="btn-stop" type="button"></button></div>
+              </div>
+              <div id="scan-msg" class="mt-2" role="status" aria-live="polite"></div>
+              <canvas id="scan-canvas" hidden></canvas>
+            </div>
+          </div>
+          <div id="result" aria-live="polite"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2 id="what-h"></h2></div>
+          <div class="card-body">
+            <p class="text-2" id="what-lead"></p>
+            <ul class="list-plain what-list" id="what-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script src="assets/vendor/jsQR.js"></script>
+  <script type="module" src="verify.js"></script>
+</body>
+</html>

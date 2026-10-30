@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · Anumati Setu</title>
+  <meta name="description" content="Sign in to Anumati Setu, or pick a demo account to explore the portal as an institution, officer or authority.">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <script src="assets/js/config.js"></script>
+  <style>
+    .login-grid { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 22px; align-items: start; }
+    .login-card .logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .login-card .logo-row svg { width: 52px; height: 52px; }
+    .pw-row { position: relative; }
+    .pw-row .input { padding-right: 78px; }
+    .pw-row .pw-toggle { position: absolute; right: 4px; top: 4px; height: 30px; }
+    .acct-group { margin-bottom: 18px; }
+    .acct-group h3 { font-size: .95rem; margin: 0 0 8px; color: var(--as-text-2); }
+    .acct { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; border: 1px solid var(--as-border); border-radius: var(--as-radius-sm); background: var(--as-surface); }
+    .acct + .acct { margin-top: 8px; }
+    .acct .who { min-width: 0; }
+    .acct .who .n { font-weight: 600; }
+    .acct .who .d { font-size: .8rem; color: var(--as-muted); }
+    .acct .who .e { font-family: var(--as-mono); font-size: .78rem; color: var(--as-text-2); word-break: break-all; }
+    @media (max-width: 900px) { .login-grid { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body data-page="login">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="login-grid">
+        <div class="card login-card accent-top">
+          <div class="card-body">
+            <div class="logo-row"><span id="login-logo" aria-hidden="true"></span><div><h2 class="mb-0" id="login-h"></h2><div class="muted small" id="login-sub"></div></div></div>
+            <div id="signed-note"></div>
+            <div id="auto-note"></div>
+            <div id="login-error" role="alert" aria-live="assertive"></div>
+            <form id="login-form" novalidate>
+              <div class="stack">
+                <div class="field">
+                  <label for="email" id="lbl-email"></label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="username" required>
+                </div>
+                <div class="field">
+                  <label for="password" id="lbl-password"></label>
+                  <div class="pw-row">
+                    <input class="input" id="password" name="password" type="password" autocomplete="current-password" required>
+                    <button class="btn sm ghost pw-toggle" id="pw-toggle" type="button" aria-controls="password"></button>
+                  </div>
+                </div>
+                <button class="btn lg block" id="login-submit" type="submit"></button>
+                <div class="hint muted small" id="pw-hint"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card" id="demo-card">
+          <div class="card-head"><h2 id="demo-h"></h2></div>
+          <div class="card-body" id="demo-body"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="login.js"></script>
+</body>
+</html>

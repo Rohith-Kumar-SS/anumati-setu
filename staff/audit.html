@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audit trail · Anumati Setu</title>
+  <meta name="description" content="Hash-chained audit trail of every action on the portal, with one-click integrity check">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    #filters .field:first-child { min-width: 270px; }
+    .hash { font-family: var(--as-mono); font-size: .75rem; color: var(--as-text-2); white-space: nowrap; }
+    .chain-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+    .chain-head > .grow { flex: 1; min-width: 240px; }
+    .tamper-diff { font-size: .85rem; margin-top: 10px; }
+    .tamper-diff code { display: block; white-space: pre-wrap; word-break: break-word; padding: 6px 8px; border-radius: 6px; margin-top: 4px; }
+    .tamper-diff .was { background: var(--as-success-50); }
+    .tamper-diff .now { background: var(--as-danger-50); }
+  </style>
+</head>
+<body data-page="audit">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="card section">
+        <div class="card-head">
+          <h2 id="chain-title"></h2>
+          <button class="btn" id="verify-btn" type="button"></button>
+        </div>
+        <div class="card-body">
+          <p class="text-2 small mt-0" id="chain-intro"></p>
+          <div id="chain-result" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="card section" id="tamper-card" hidden>
+        <div class="card-head"><h2 id="tamper-title"></h2></div>
+        <div class="card-body">
+          <p class="text-2 small mt-0" id="tamper-text"></p>
+          <div class="row">
+            <button class="btn warning" id="tamper-btn" type="button"></button>
+            <button class="btn secondary" id="restore-btn" type="button"></button>
+          </div>
+          <div id="tamper-out"></div>
+        </div>
+      </div>
+      <div class="card section">
+        <div class="card-body"><div id="filters" class="filters"></div></div>
+      </div>
+      <div class="card">
+        <div id="list"></div>
+        <div id="pager"></div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="audit.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anumati Setu · Approval Workflow, Compliance &amp; Alerts Portal</title>
+  <meta name="description" content="Anumati Setu routes AICTE approval applications through their stages, watches every deadline, escalates delays and keeps a tamper-evident record. Officials decide.">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <script src="assets/js/config.js"></script>
+  <style>
+    .home-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; }
+    .home-hero h1 { font-size: 2.5rem; margin: 6px 0 4px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
+    .home-hero h1 .hi { color: var(--as-saffron-600); }
+    .home-line { font-size: 1.25rem; font-weight: 700; color: var(--as-navy); margin: 10px 0 18px; }
+    .home-logo svg { width: 150px; height: 150px; display: block; }
+    .home-sec { margin-top: 36px; }
+    #home-body { padding-bottom: 44px; }
+    .home-sec > h2 { display: flex; align-items: center; gap: 10px; }
+    .home-sec > .lead { margin-bottom: 16px; }
+    .route-card .route-types { font-size: .82rem; color: var(--as-muted); margin: 0 0 10px; }
+    .route-card .flow { gap: 6px; }
+    .auto-list li, .human-list li { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--as-border); }
+    .auto-list li:last-child, .human-list li:last-child { border-bottom: 0; }
+    .auto-list .icon { color: var(--as-primary); flex: none; margin-top: 3px; }
+    .human-list .icon { color: var(--as-saffron-600); flex: none; margin-top: 3px; }
+    .ps-card, .inn-card { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; height: 100%; }
+    .ps-card .tcode { font-weight: 800; font-size: 1.05rem; color: var(--as-saffron-600); flex: none; min-width: 2.2rem; }
+    .ps-card h3, .inn-card h3 { font-size: .98rem; margin: 0 0 3px; }
+    .ps-card p, .inn-card p { margin: 0; font-size: .86rem; color: var(--as-text-2); }
+    .limits li { margin-bottom: 4px; }
+    @media (max-width: 760px) {
+      .home-hero { grid-template-columns: 1fr; }
+      .home-hero h1 { font-size: 1.9rem; }
+      .home-logo { display: none; }
+      .home-line { font-size: 1.08rem; }
+    }
+  </style>
+</head>
+<body data-page="home">
+  <header id="as-header"></header>
+  <main id="main" class="as-main flush">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="as-container">
+        <div class="home-hero">
+          <div>
+            <div class="eyebrow" id="hero-eyebrow"></div>
+            <h1 id="hero-title"></h1>
+            <p class="lead" id="hero-tagline"></p>
+            <p class="home-line" id="hero-line"></p>
+            <div class="row" id="hero-actions"></div>
+          </div>
+          <div class="home-logo" id="hero-logo" aria-hidden="true"></div>
+        </div>
+        <div id="stats" class="grid g-4 mt-4" aria-live="polite"></div>
+      </div>
+    </section>
+    <div class="as-container" id="home-body"></div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="index.js"></script>
+</body>
+</html>

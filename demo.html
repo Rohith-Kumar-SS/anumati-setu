@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Judge demo · Anumati Setu</title>
+  <meta name="description" content="Judge guide for Anumati Setu: run the eight demonstration scenarios on fresh data, move the demo clock and sign in as any role with one click.">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <script src="assets/js/config.js"></script>
+  <style>
+    .sc-card { display: flex; flex-direction: column; height: 100%; scroll-margin-top: 16px; }
+    .sc-card .card-body { flex: 1; }
+    .sc-card ol { margin: 0 0 0 18px; padding: 0; font-size: .88rem; color: var(--as-text-2); }
+    .sc-card ol li { margin-bottom: 3px; }
+    .sc-title { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .sc-title h3 { margin: 0; }
+    .sc-run { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px; }
+    .sc-run .field { width: 130px; }
+    .sc-result { margin-top: 12px; }
+    .sc-result ul { margin: 8px 0 0 0; padding-left: 18px; font-size: .82rem; }
+    .sc-result .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .clock-big { font-size: 1.6rem; font-weight: 800; }
+    .acct-link { white-space: nowrap; }
+  </style>
+</head>
+<body data-page="demo">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container" id="demo-body"></div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="demo.js"></script>
+</body>
+</html>

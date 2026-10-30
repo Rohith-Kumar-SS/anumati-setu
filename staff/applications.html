@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Applications · Anumati Setu</title>
+  <meta name="description" content="Search and filter AICTE approval applications by status, stage, region, type and deadline on Anumati Setu">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .apps-filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 14px; align-items: end; }
+    .apps-filters .span-2 { grid-column: span 2; }
+    .apps-toggles { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+    .apps-sub { font-size: .8rem; color: var(--as-muted); }
+    @media (max-width: 960px) { .apps-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .apps-filters { grid-template-columns: minmax(0, 1fr); } .apps-filters .span-2 { grid-column: auto; } }
+  </style>
+</head>
+<body data-page="staff-applications">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container stack">
+      <div id="inst-note"></div>
+      <section class="card" aria-labelledby="filters-h">
+        <div class="card-body">
+          <h2 id="filters-h" class="sr-only" data-i18n="apps.filters">Filters</h2>
+          <form id="filters" class="apps-filters" role="search" autocomplete="off"></form>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="list-h">
+        <div class="card-head">
+          <h2 id="list-h" class="mb-0" data-i18n="apps.results">Applications</h2>
+          <button class="btn sm secondary" id="export" type="button"></button>
+        </div>
+        <div id="list"></div>
+        <div id="pager"></div>
+      </section>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="applications.js"></script>
+</body>
+</html>

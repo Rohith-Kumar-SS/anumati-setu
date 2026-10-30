@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · Anumati Setu</title>
+  <meta name="description" content="Your applications, the actions that need you, compliance health and the next dates for your institution.">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .score-num { font-size: 2.6rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+    .act-item .li-main .li-title { font-weight: 600; }
+    .app-why { font-size: .82rem; color: var(--as-text-2); max-width: 46ch; }
+    .cal-list li .grow { min-width: 0; }
+    .quick .btn { justify-content: flex-start; }
+  </style>
+</head>
+<body data-page="institution-dashboard">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div id="kpis" class="grid g-5 section"></div>
+      <div class="grid g-2-1">
+        <div class="stack lg">
+          <section class="card" aria-labelledby="act-h">
+            <div class="card-head"><h2 id="act-h"></h2><span class="sub" id="act-sub"></span></div>
+            <div id="actions"></div>
+          </section>
+          <section class="card" aria-labelledby="apps-h">
+            <div class="card-head"><h2 id="apps-h"></h2><a class="btn sm" id="apply-link" href="apply.html"></a></div>
+            <div id="apps"></div>
+          </section>
+        </div>
+        <div class="stack lg">
+          <section class="card" aria-labelledby="health-h">
+            <div class="card-head"><h2 id="health-h"></h2></div>
+            <div class="card-body" id="health"></div>
+          </section>
+          <section class="card" aria-labelledby="next-h">
+            <div class="card-head"><h2 id="next-h"></h2><a class="btn sm secondary" id="cal-link" href="calendar.html"></a></div>
+            <div class="card-body" id="events"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

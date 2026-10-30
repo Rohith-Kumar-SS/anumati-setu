@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EVC board · Anumati Setu</title>
+  <meta name="description" content="Expert Visit Committee board: visits to schedule, scheduled visits, completed reports and the expert pool on Anumati Setu">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .evc-filters { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-end; }
+    .evc-filters .field { min-width: 200px; }
+    .evc-note { font-size: .85rem; color: var(--as-text-2); padding: 12px 16px 0; margin: 0; }
+    .evc-ranges { display: flex; flex-wrap: wrap; gap: 4px; }
+    .evc-names { max-width: 260px; font-size: .84rem; }
+  </style>
+</head>
+<body data-page="staff-evc">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container stack">
+      <section class="card" id="filters-card" aria-label="Filters">
+        <div class="card-body"><form id="filters" class="evc-filters" autocomplete="off"></form></div>
+      </section>
+      <section class="card" id="board" aria-label="EVC board"></section>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="evc.js"></script>
+</body>
+</html>

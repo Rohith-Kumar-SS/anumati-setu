@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document validity · Anumati Setu</title>
+  <meta name="description" content="Validity monitor for the prescribed documents of every institution, with renewals waiting for verification">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .count-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .count-chips button { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--as-border-strong);
+      background: var(--as-surface); font: inherit; font-size: .85rem; cursor: pointer; color: var(--as-text-2); }
+    .count-chips button:hover { border-color: var(--as-primary); color: var(--as-primary); }
+    .count-chips button.active { background: var(--as-primary-50); border-color: var(--as-primary); color: var(--as-primary-700); font-weight: 600; }
+    .count-chips b { font-variant-numeric: tabular-nums; }
+    .doc-detail h4 { margin: 18px 0 8px; font-size: .95rem; }
+    .doc-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--as-border); }
+    #filters .field:first-child { min-width: 310px; }
+    tr.this-version td { background: var(--as-primary-50); }
+  </style>
+</head>
+<body data-page="documents">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="card section">
+        <div class="card-body">
+          <div id="filters" class="filters"></div>
+          <div id="chips" class="count-chips mt-2" role="group"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div id="list"></div>
+        <div id="pager"></div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="documents.js"></script>
+</body>
+</html>

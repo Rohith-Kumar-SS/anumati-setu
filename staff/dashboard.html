@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · Anumati Setu</title>
+  <meta name="description" content="Role-based dashboard for AICTE officers: queue, deadlines, escalations and stage-wise load on Anumati Setu">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .dash-why { font-size: .8rem; color: var(--as-text-2); margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 520px; }
+    .dash-esc-title { font-size: .86rem; color: var(--as-text-2); }
+    .dash-cols { align-items: start; }
+  </style>
+</head>
+<body data-page="staff-dashboard">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container stack lg">
+      <section aria-labelledby="dash-kpi-h">
+        <h2 class="sr-only" id="dash-kpi-h" data-i18n="dash.kpi_h">Key numbers</h2>
+        <div id="kpis" class="grid g-4"></div>
+      </section>
+      <div id="visits-slot"></div>
+      <div class="grid g-2-1 dash-cols">
+        <section class="card" aria-labelledby="queue-h">
+          <div class="card-head">
+            <div><h2 id="queue-h" class="mb-0" data-i18n="dash.queue">Needs attention</h2><div class="sub" id="queue-sub"></div></div>
+            <a class="btn sm secondary" id="queue-all" href="applications.html"><span data-i18n="dash.view_all">All applications</span></a>
+          </div>
+          <div id="queue"></div>
+        </section>
+        <div class="stack">
+          <section class="card" aria-labelledby="esc-h">
+            <div class="card-head">
+              <h2 id="esc-h" class="mb-0" data-i18n="dash.escalations">Escalations for me</h2>
+              <a class="btn sm secondary" href="escalations.html?mine=1"><span data-i18n="dash.view_all_esc">View all</span></a>
+            </div>
+            <div id="esc"></div>
+          </section>
+          <section class="card" id="verify-card" hidden aria-labelledby="verify-h">
+            <div class="card-head"><h2 id="verify-h" class="mb-0" data-i18n="dash.verify">To verify</h2></div>
+            <div id="verify" class="list-divided"></div>
+          </section>
+        </div>
+      </div>
+      <section id="charts" class="grid g-3" aria-label="Charts"></section>
+      <div id="job"></div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script src="../assets/vendor/chart.umd.min.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

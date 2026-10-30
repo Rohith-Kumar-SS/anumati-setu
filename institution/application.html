@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Application · Anumati Setu</title>
+  <meta name="description" content="Follow one application: where it is, why, what is expected from you, replies to deficiency letters, expert visit, decision, undertakings and letters.">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .app-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .app-head .ref { font-family: var(--as-mono); font-weight: 800; font-size: 1.15rem; }
+    .def-items { margin: 6px 0 0 18px; padding: 0; }
+    .def-items li { margin-bottom: 3px; }
+    .def-block { border: 1px solid var(--as-border); border-radius: var(--as-radius-sm); padding: 12px 14px; margin-bottom: 10px; background: var(--as-surface); }
+    .reply-files { list-style: none; margin: 8px 0 0; padding: 0; font-size: .86rem; }
+    .reply-files li { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; }
+    .file-line { display: flex; gap: 8px; align-items: center; font-size: .88rem; }
+  </style>
+</head>
+<body data-page="institution-application">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container" id="app-body"></div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="application.js"></script>
+</body>
+</html>

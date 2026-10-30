@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System · Anumati Setu</title>
+  <meta name="description" content="Demo clock, daily job, demo data reset and the mock AICTE feed import">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .clock-date { font-size: 1.9rem; font-weight: 800; line-height: 1.1; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .json-area { font-family: var(--as-mono); font-size: .8rem; min-height: 230px; line-height: 1.45; white-space: pre; }
+    .result-box { margin-top: 12px; }
+  </style>
+</head>
+<body data-page="system">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="grid g-2 section">
+        <div class="stack">
+          <div class="card" id="clock-card"></div>
+          <div class="card" id="job-card"></div>
+        </div>
+        <div class="stack">
+          <div class="card" id="server-card"></div>
+          <div class="card accent-top accent-danger" id="reset-card"></div>
+        </div>
+      </div>
+      <div class="card section" id="integ-card"></div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="system.js"></script>
+</body>
+</html>

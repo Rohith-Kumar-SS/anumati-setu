@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escalations · Anumati Setu</title>
+  <meta name="description" content="Overdue items climbing the escalation ladder: holder, supervisor and Approval Bureau, with acknowledgement on Anumati Setu">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .esc-filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 14px; align-items: end; }
+    .esc-filters .esc-wide { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+    .esc-counts { display: flex; flex-wrap: wrap; gap: 8px; }
+    .esc-counts .btn { height: 32px; }
+    .esc-card { display: flex; flex-direction: column; gap: 10px; }
+    .esc-card h3 { margin: 0; font-size: .98rem; line-height: 1.4; }
+    .esc-head { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }
+    .esc-meta { font-size: .82rem; color: var(--as-text-2); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    .esc-rung-note { font-size: .78rem; color: var(--as-text-2); margin-top: 2px; }
+    .esc-ack { font-size: .84rem; background: var(--as-success-50); border: 1px solid #bfe3ca; border-radius: var(--as-radius-sm); padding: 8px 10px; }
+    .esc-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-top: auto; }
+    @media (max-width: 960px) { .esc-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .esc-filters { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body data-page="staff-escalations">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container stack">
+      <section class="card" aria-label="Summary"><div class="card-body"><div id="counts" class="esc-counts"></div></div></section>
+      <section class="card" aria-label="Filters"><div class="card-body"><form id="filters" class="esc-filters" autocomplete="off"></form></div></section>
+      <div id="list"></div>
+      <div id="pager"></div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="escalations.js"></script>
+</body>
+</html>

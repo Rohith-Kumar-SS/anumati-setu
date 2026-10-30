@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rulebook · Anumati Setu</title>
+  <meta name="description" content="Versioned rulebook: edit timelines, reminders, escalation and routes, preview the effect on open cases, then publish">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    fieldset.rule-group { border: 1px solid var(--as-border); border-radius: var(--as-radius); padding: 14px 16px 16px; margin: 0 0 16px; min-width: 0; }
+    fieldset.rule-group > legend { font-weight: 700; font-size: .95rem; padding: 0 8px; color: var(--as-navy); }
+    .rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px 18px; }
+    .rule-grid .wide { grid-column: 1 / -1; }
+    .triple { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .triple .field > label { font-weight: 500; font-size: .8rem; }
+    .json-area { font-family: var(--as-mono); font-size: .8rem; min-height: 360px; line-height: 1.45; white-space: pre; }
+    .change-path { font-weight: 600; }
+    .val-old { color: var(--as-muted); text-decoration: line-through; }
+    .val-new { font-weight: 700; color: var(--as-primary-700); }
+    .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .editor-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 6px; }
+    .draft-banner { margin-bottom: 14px; }
+  </style>
+</head>
+<body data-page="rules">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div id="state" class="section"></div>
+      <div id="current" class="section" hidden></div>
+      <div class="card section" id="editor-card" hidden>
+        <div class="card-head"><h2 id="editor-title"></h2></div>
+        <div class="card-body">
+          <div id="draft-banner"></div>
+          <form id="editor" novalidate></form>
+        </div>
+      </div>
+      <div id="preview" class="section" aria-live="polite"></div>
+      <div class="card section" id="publish-card" hidden>
+        <div class="card-head"><h2 id="publish-title"></h2></div>
+        <div class="card-body" id="publish-body"></div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="rules.js"></script>
+</body>
+</html>

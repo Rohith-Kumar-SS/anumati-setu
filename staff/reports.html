@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports · Anumati Setu</title>
+  <meta name="description" content="Pendency, EVC, undertaking, document, overdue and regional reports with CSV export, plus the simulated notification outbox">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .rep-body { padding: 16px 18px; }
+    .rep-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 12px; }
+    .rep-head h2 { margin: 0; font-size: 1.1rem; }
+    .rep-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .rep-chips .chip b { font-variant-numeric: tabular-nums; }
+    .rep-body .table-wrap { border: 1px solid var(--as-border); }
+    .ob-body { max-width: 360px; }
+    @media print {
+      .tabs, .no-print { display: none !important; }
+      .rep-body { padding: 0; }
+    }
+  </style>
+</head>
+<body data-page="reports">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="card"><div id="tabs"></div></div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="reports.js"></script>
+</body>
+</html>

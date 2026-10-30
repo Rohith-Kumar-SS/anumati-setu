@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notifications · Anumati Setu</title>
+  <meta name="description" content="Your alerts and messages on Anumati Setu">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <script src="assets/js/config.js"></script>
+</head>
+<body data-page="notifications">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="card">
+        <div class="card-head">
+          <div class="row">
+            <div class="btn-group" role="group" aria-label="Filter">
+              <button class="btn sm secondary" data-filter="all" type="button"><span data-i18n="common.all">All</span></button>
+              <button class="btn sm secondary" data-filter="unread" type="button"><span data-i18n="ntf.unread">Unread</span></button>
+            </div>
+          </div>
+          <button class="btn sm ghost" id="read-all" type="button"></button>
+        </div>
+        <div id="list" class="list-divided"></div>
+        <div id="pager"></div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="notifications.js"></script>
+</body>
+</html>

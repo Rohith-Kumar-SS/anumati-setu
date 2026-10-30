@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case summary · Anumati Setu</title>
+  <meta name="description" content="One-page electronic case summary of an application: stages, deficiencies, expert visit, decision, documents, undertakings and letters.">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .sheet { max-width: 980px; }
+    .sheet .sh-brand { display: flex; gap: 12px; align-items: center; }
+    .sheet .sh-brand svg { width: 52px; height: 52px; }
+    .sheet .sh-name { font-weight: 800; font-size: 1.15rem; color: var(--as-navy); line-height: 1.2; }
+    .sheet .sh-org { font-size: .8rem; color: #444; }
+    .sheet .sh-meta { text-align: right; font-size: .88rem; }
+    .sheet .sh-meta .ref { font-family: var(--as-mono); font-weight: 700; font-size: 1.05rem; }
+    .sheet .sec { margin-top: 22px; }
+    .sheet h3.sec-h { font-size: 1rem; margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid #c9d2de; display: flex; gap: 8px; align-items: center; }
+    .sheet .none { color: #555; font-size: .9rem; margin: 0; }
+    .sheet .block { border: 1px solid #dfe5ee; border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+    .sheet .block ul { margin: 4px 0 0 18px; padding: 0; }
+    .sheet .foot-gen { margin-top: 24px; padding-top: 10px; border-top: 1px solid #c9d2de; font-size: .82rem; color: #444; }
+    .sheet .table-wrap { border: 1px solid #dfe5ee; }
+    @media (max-width: 640px) { .sheet .sh-meta { text-align: left; } }
+    @media print {
+      .as-brandbar, #as-pagehead { display: none !important; }
+      .as-main { padding: 0; }
+      .sheet .table-wrap { overflow: visible; }
+      .sheet .sec { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body data-page="case-summary">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div id="sum-actions" class="row no-print" style="max-width:980px;margin:0 auto 14px"></div>
+      <div id="sum-body"></div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="case-summary.js"></script>
+</body>
+</html>

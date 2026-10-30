@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New application · Anumati Setu</title>
+  <meta name="description" content="Submit a new AICTE approval application. The portal picks the route from the application type and shows the stages and time limits before you submit.">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .apply-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 20px; align-items: start; }
+    .route-preview .flow .node small { font-weight: 500; color: var(--as-muted); margin-left: 4px; }
+    .route-total { font-size: .9rem; color: var(--as-text-2); margin-top: 10px; }
+    @media (max-width: 900px) { .apply-grid { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body data-page="apply">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div id="done"></div>
+      <div class="apply-grid">
+        <div class="card accent-top" id="form-card">
+          <div class="card-head"><h2 id="form-h"></h2></div>
+          <div class="card-body">
+            <div id="form-error" role="alert" aria-live="assertive"></div>
+            <form id="apply-form" novalidate>
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="app_type" id="lbl-type"></label>
+                  <select class="select" id="app_type" name="app_type" required></select>
+                  <div class="error" id="err-type" hidden></div>
+                </div>
+                <div class="field full">
+                  <label for="programme" id="lbl-programme"></label>
+                  <input class="input" id="programme" name="programme" type="text" maxlength="160" autocomplete="off">
+                  <div class="hint" id="hint-programme"></div>
+                  <div class="error" id="err-programme" hidden></div>
+                </div>
+                <div class="field">
+                  <label for="intake" id="lbl-intake"></label>
+                  <input class="input" id="intake" name="intake" type="number" min="0" max="1200" step="1" inputmode="numeric">
+                  <div class="hint" id="hint-intake"></div>
+                  <div class="error" id="err-intake" hidden></div>
+                </div>
+                <div class="field full">
+                  <label for="remarks" id="lbl-remarks"></label>
+                  <textarea class="textarea" id="remarks" name="remarks" maxlength="2000" rows="4"></textarea>
+                </div>
+              </div>
+              <div class="row end mt-3">
+                <button class="btn lg" id="btn-submit" type="submit"></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="stack lg">
+          <section class="card route-preview" aria-labelledby="route-h">
+            <div class="card-head"><h2 id="route-h"></h2></div>
+            <div class="card-body" id="route"></div>
+          </section>
+          <section class="card" aria-labelledby="next-h">
+            <div class="card-head"><h2 id="next-h"></h2></div>
+            <div class="card-body"><ul class="list-plain" id="next-list"></ul></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="apply.js"></script>
+</body>
+</html>

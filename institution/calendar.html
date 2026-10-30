@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compliance calendar · Anumati Setu</title>
+  <meta name="description" content="Every date that matters for your institution: undertakings due, documents expiring, replies due and expert visits, with an .ics download for your own calendar.">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/config.js"></script>
+  <style>
+    .month-h { font-size: 1.05rem; margin: 22px 0 6px; display: flex; align-items: center; gap: 8px; }
+    .month-h:first-child { margin-top: 0; }
+    .cal-list li .ev-main { flex: 1; min-width: 0; }
+    .cal-list li .ev-title { font-weight: 600; }
+    .cal-list li .ev-sub { font-size: .82rem; color: var(--as-muted); display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+    .cal-list li .ev-act { flex: none; }
+    @media (max-width: 640px) { .cal-list li { flex-wrap: wrap; } .cal-list li .ev-act { margin-left: 70px; } }
+  </style>
+</head>
+<body data-page="institution-calendar">
+  <header id="as-header"></header>
+  <div id="as-pagehead"></div>
+  <main id="main" class="as-main">
+    <div class="as-container">
+      <div class="card">
+        <div class="card-head">
+          <div class="row" id="cal-summary"></div>
+          <div class="row">
+            <label class="check" for="show-past"><input type="checkbox" id="show-past"><span id="lbl-past"></span></label>
+            <button class="btn" id="btn-ics" type="button"></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="text-2 small" id="ics-hint"></p>
+          <div id="cal-body" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="as-footer"></div>
+  <script type="module" src="calendar.js"></script>
+</body>
+</html>
